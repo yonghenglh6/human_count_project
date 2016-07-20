@@ -33,6 +33,8 @@ def load_camera_config():
         camera['config']['config']['showResult']='0';
         camera['config']['config']['areaFilter']='True';
         camera['config']['config']['areaFilterThreshold']='26';
+        camera['config']['config']['width']=640;
+        camera['config']['config']['height']=480;
 
         if os.path.exists(configPath+'baseconfig'):
             #Base config
@@ -40,7 +42,8 @@ def load_camera_config():
             baseconfig.read(configPath+'baseconfig')
 
             for section in baseconfig.sections():
-                camera['config'][section] = {};
+                if not camera['config'].has_key(section):
+                    camera['config'][section] = {};
                 for option in baseconfig.options(section):
                     camera['config'][section][option] = baseconfig.get(section, option);
 
