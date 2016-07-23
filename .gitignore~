@@ -1,6 +1,10 @@
 #project canliu
 fcn/*
 camera/*
+.idea
+localNoSyn/
+
+*~
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

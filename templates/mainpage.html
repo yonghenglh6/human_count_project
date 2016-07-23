@@ -7,12 +7,13 @@ $def with(result_to_show)
 </head>
 <body>
 
-
+<a href="ranking.html?orderby=count">Order By Person Count</a>
 $for cameradata in result_to_show:
     <div>
-    <span>$cameradata['uid']
-        <img src="static/$cameradata['image']"/>
+    <span>$cameradata['uid']<br/>
+        <img width=640 height=480 src="static/$cameradata['image']"/>
         共$len(cameradata['frames'])个人
+        <br/>
     </span>
     </div>
 

@@ -156,7 +156,13 @@ class show_brief_result:
                         values=line.split(' ');
                         frames.append((int(values[0]),int(values[1]),int(values[2]),int(values[3]),float(values[4])));
                 cameradata['frames']=frames;
+
+                
                 result_to_show.append(cameradata);
+        i = web.input(orderby="default");
+        if i.orderby=='count':
+            #print len(result_to_show[0]['frames'])
+            result_to_show.sort(key=lambda x:len(x['frames']),reverse=True);
         return render.mainpage(result_to_show);
 
 
