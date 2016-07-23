@@ -33,6 +33,8 @@ def load_camera_config():
         camera['config']['config']['showResult']='0';
         camera['config']['config']['areaFilter']='True';
         camera['config']['config']['areaFilterThreshold']='26';
+        camera['config']['config']['maxPerserveFrameNumber']='1000';
+        camera['config']['config']['deleteNumberWhenExceed']='100';
         camera['config']['config']['width']=640;
         camera['config']['config']['height']=480;
 
